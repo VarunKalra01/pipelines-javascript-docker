@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: varunkalrapipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: varunkalrapipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: varunkalrapipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: varunkalrapipelinesjavascriptdocker 
+          image: lakhwancontainer.azurecr.io/varunkalrapipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
