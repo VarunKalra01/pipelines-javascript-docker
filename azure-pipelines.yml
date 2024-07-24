@@ -17,7 +17,7 @@ pool:
   vmImage: $(vmImageName)
 
 steps:
-- stage: Build
+- step: Build
   displayName: Build and Push Image
   steps:
   - task: Docker@2
@@ -33,7 +33,7 @@ steps:
   - upload: manifests
     artifact: manifests
 
-- stage: Deploy
+- step: Deploy
   displayName: Deploy to AKS
   dependsOn: Build
   steps:
